@@ -1,5 +1,5 @@
-﻿using CheapBuyAPI.Interfaces;
-using CheapBuyAPI.Models;
+﻿using CheapBuyDB.Interfaces;
+using CheapBuyDB.Models;
 using CheapBuyAPI.Response;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -38,7 +38,7 @@ namespace CheapBuyAPI.Controllers.Tests
         public void AddProductTest()
         {
             // Given
-            ProductResponse response = new()
+            ProductRequest response = new()
             {
                 ProductId = "TestId",
                 ProductName = "Test",

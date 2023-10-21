@@ -1522,9 +1522,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "CheapBuyDB": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.0-rc.2.23480.2",
-          "Microsoft.EntityFrameworkCore": "8.0.0-rc.2.23480.1",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-rc.2.23480.1",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "compile": {
@@ -1532,6 +1531,23 @@
         },
         "runtime": {
           "bin/placeholder/CheapBuyAPI.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "CheapBuyDB/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.0-rc.2.23480.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-rc.2.23480.1"
+        },
+        "compile": {
+          "bin/placeholder/CheapBuyDB.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CheapBuyDB.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -4250,6 +4266,11 @@
       "type": "project",
       "path": "../CheapBuyAPI/CheapBuyAPI.csproj",
       "msbuildProject": "../CheapBuyAPI/CheapBuyAPI.csproj"
+    },
+    "CheapBuyDB/1.0.0": {
+      "type": "project",
+      "path": "../CheapBuyDB/CheapBuyDB.csproj",
+      "msbuildProject": "../CheapBuyDB/CheapBuyDB.csproj"
     }
   },
   "projectFileDependencyGroups": {

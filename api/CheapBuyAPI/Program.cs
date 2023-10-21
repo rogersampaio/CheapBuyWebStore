@@ -1,5 +1,5 @@
-using CheapBuyAPI;
-using CheapBuyAPI.Interfaces;
+using CheapBuyDB;
+using CheapBuyDB.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

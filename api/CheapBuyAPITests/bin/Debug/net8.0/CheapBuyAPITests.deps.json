@@ -916,13 +916,21 @@
       },
       "CheapBuyAPI/1.0.0": {
         "dependencies": {
+          "CheapBuyDB": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.0-rc.2.23480.2",
-          "Microsoft.EntityFrameworkCore": "8.0.0-rc.2.23480.1",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-rc.2.23480.1",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
           "CheapBuyAPI.dll": {}
+        }
+      },
+      "CheapBuyDB/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.0-rc.2.23480.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-rc.2.23480.1"
+        },
+        "runtime": {
+          "CheapBuyDB.dll": {}
         }
       },
       "Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions/14.0.0.0": {
@@ -1460,6 +1468,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "CheapBuyAPI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CheapBuyDB/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

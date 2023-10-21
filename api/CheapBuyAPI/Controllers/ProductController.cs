@@ -1,6 +1,6 @@
 using CheapBuyAPI.Response;
-using CheapBuyAPI.Interfaces;
-using CheapBuyAPI.Models;
+using CheapBuyDB.Interfaces;
+using CheapBuyDB.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CheapBuyAPI.Controllers;

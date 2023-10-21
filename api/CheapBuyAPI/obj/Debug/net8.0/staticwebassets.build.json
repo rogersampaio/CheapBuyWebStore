@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "FUQ/uE7bXGqU/wQhy5G2yS147tdDVXUAlYqEtEeSPUA=",
+  "Hash": "Za/xYvF4s5VXalBpJvH4/+NTAPnE4EYsOB+3LGKbOqo=",
   "Source": "CheapBuyAPI",
   "BasePath": "_content/CheapBuyAPI",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyDB\\CheapBuyDB.csproj",
+      "Version": 2,
+      "Source": "CheapBuyDB",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
   "DiscoveryPatterns": [],
   "Assets": []
 }

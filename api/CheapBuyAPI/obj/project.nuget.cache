@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8GG4pb7X5fWUk14OdP6fuW8XOywukS4gmODvNo0ZOzSmr2qpgwcl7lySUfXx538evPjA3CUNu9TIrFpUZYKcdA==",
+  "dgSpecHash": "oJHciMAz6mKRC+vEPmzikmTPLSRx3lipvvC7R92ii9nJARZHUI7F+yaoO/eJG+97egWKR4hTDz1z8h7Y3BvDcA==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\roger-argolo\\api\\CheapBuyAPI\\CheapBuyAPI.csproj",
+  "projectFilePath": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPI\\CheapBuyAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\roger\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\roger\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

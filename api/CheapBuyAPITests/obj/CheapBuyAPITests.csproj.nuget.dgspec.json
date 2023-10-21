@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\roger-argolo\\api\\CheapBuyAPITests\\CheapBuyAPITests.csproj": {}
+    "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPITests\\CheapBuyAPITests.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\roger-argolo\\api\\CheapBuyAPITests\\CheapBuyAPITests.csproj": {
+    "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPITests\\CheapBuyAPITests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\roger-argolo\\api\\CheapBuyAPITests\\CheapBuyAPITests.csproj",
+        "projectUniqueName": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPITests\\CheapBuyAPITests.csproj",
         "projectName": "CheapBuyAPITests",
-        "projectPath": "C:\\Projects\\roger-argolo\\api\\CheapBuyAPITests\\CheapBuyAPITests.csproj",
+        "projectPath": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPITests\\CheapBuyAPITests.csproj",
         "packagesPath": "C:\\Users\\roger\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\roger-argolo\\api\\CheapBuyAPITests\\obj\\",
+        "outputPath": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPITests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\roger\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Projects\\roger-argolo\\api\\CheapBuyAPI\\CheapBuyAPI.csproj": {
-                "projectPath": "C:\\Projects\\roger-argolo\\api\\CheapBuyAPI\\CheapBuyAPI.csproj"
+              "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPI\\CheapBuyAPI.csproj": {
+                "projectPath": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPI\\CheapBuyAPI.csproj"
               }
             }
           }
@@ -60,6 +60,10 @@
               "target": "Package",
               "version": "[17.9.0-preview-23503-02, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
+            },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -87,14 +91,14 @@
         }
       }
     },
-    "C:\\Projects\\roger-argolo\\api\\CheapBuyAPI\\CheapBuyAPI.csproj": {
+    "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPI\\CheapBuyAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\roger-argolo\\api\\CheapBuyAPI\\CheapBuyAPI.csproj",
+        "projectUniqueName": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPI\\CheapBuyAPI.csproj",
         "projectName": "CheapBuyAPI",
-        "projectPath": "C:\\Projects\\roger-argolo\\api\\CheapBuyAPI\\CheapBuyAPI.csproj",
+        "projectPath": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPI\\CheapBuyAPI.csproj",
         "packagesPath": "C:\\Users\\roger\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\roger-argolo\\api\\CheapBuyAPI\\obj\\",
+        "outputPath": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\roger\\AppData\\Roaming\\NuGet\\NuGet.Config",

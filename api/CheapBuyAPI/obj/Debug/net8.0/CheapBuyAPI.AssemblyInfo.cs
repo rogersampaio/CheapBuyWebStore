@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CheapBuyAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db09b75a8b910ebf372e2f838473a04f17aa747d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8702d9ebd4456c0f3b0b044256b2df57f5160f80")]
 [assembly: System.Reflection.AssemblyProductAttribute("CheapBuyAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CheapBuyAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

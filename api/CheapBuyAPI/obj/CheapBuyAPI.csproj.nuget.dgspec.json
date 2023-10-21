@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\roger-argolo\\api\\CheapBuyAPI\\CheapBuyAPI.csproj": {}
+    "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPI\\CheapBuyAPI.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\roger-argolo\\api\\CheapBuyAPI\\CheapBuyAPI.csproj": {
+    "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPI\\CheapBuyAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\roger-argolo\\api\\CheapBuyAPI\\CheapBuyAPI.csproj",
+        "projectUniqueName": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPI\\CheapBuyAPI.csproj",
         "projectName": "CheapBuyAPI",
-        "projectPath": "C:\\Projects\\roger-argolo\\api\\CheapBuyAPI\\CheapBuyAPI.csproj",
+        "projectPath": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPI\\CheapBuyAPI.csproj",
         "packagesPath": "C:\\Users\\roger\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\roger-argolo\\api\\CheapBuyAPI\\obj\\",
+        "outputPath": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\roger\\AppData\\Roaming\\NuGet\\NuGet.Config",

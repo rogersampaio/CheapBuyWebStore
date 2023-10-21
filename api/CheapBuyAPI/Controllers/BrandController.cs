@@ -1,28 +1,25 @@
-using CheapBuyAPI.DTOs;
+using CheapBuyAPI.Response;
+using CheapBuyAPI.Interfaces;
+using CheapBuyAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CheapBuyAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class BrandController : ControllerBase
+public class BrandController(ICheapBuyRepository<Brand> brandRepository) : ControllerBase
 {
-    private readonly ICheapBuyDbContext _context;
-
-    public BrandController(ICheapBuyDbContext context)
-    {
-        _context = context;
-    }
+    private readonly ICheapBuyRepository<Brand> _brandRepository = brandRepository;
 
     [HttpGet(Name = "GetBrands")]
-    public List<BrandDto> GetAll()
+    public List<BrandResponse> GetAll()
     {
-        var brands = from brand in _context.Brands
-                       select new BrandDto
-                       {
-                           Id = brand.Id,
-                           Name = brand.Name,
-                       };
+        var brands = from brand in _brandRepository.Get()
+                     select new BrandResponse
+                     {
+                         Id = brand.Id,
+                         Name = brand.Name
+                     };
 
         return brands.ToList();
     }

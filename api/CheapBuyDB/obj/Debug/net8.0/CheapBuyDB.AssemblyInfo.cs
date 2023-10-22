@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CheapBuyDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e36d0e5a5c13c2d78ef6b2ef058117d14ffc084d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ebace09029c4acc13a9edc60334f16f6739a1bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("CheapBuyDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CheapBuyDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -192,7 +192,6 @@ C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\Microsoft.Vis
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\Microsoft.Identity.Client.dll

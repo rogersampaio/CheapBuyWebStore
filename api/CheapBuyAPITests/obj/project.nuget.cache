@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wKZLu8RJEhVhlfyku7VTjHug7ok4urgwd813YziEs1z4dHKAK2oQ9jN+p0oxpeFBjtcLt4LgB2uQx5SzstrZfg==",
+  "dgSpecHash": "cOVOTNhTx3+LlJmXjQl2q3dvYm3liXQDZPUstArgGF4vBlU5gwRBLWSzb/yovi1TcnDFNIZz/bUEZEbeyx+58Q==",
   "success": true,
   "projectFilePath": "C:\\Projects\\CheapBuyWebStore\\api\\CheapBuyAPITests\\CheapBuyAPITests.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,6 @@
     "C:\\Users\\roger\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0-rc.2.23480.1\\microsoft.entityframeworkcore.8.0.0-rc.2.23480.1.nupkg.sha512",
     "C:\\Users\\roger\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0-rc.2.23480.1\\microsoft.entityframeworkcore.abstractions.8.0.0-rc.2.23480.1.nupkg.sha512",
     "C:\\Users\\roger\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.0-rc.2.23480.1\\microsoft.entityframeworkcore.analyzers.8.0.0-rc.2.23480.1.nupkg.sha512",
-    "C:\\Users\\roger\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\8.0.0-rc.2.23480.1\\microsoft.entityframeworkcore.inmemory.8.0.0-rc.2.23480.1.nupkg.sha512",
     "C:\\Users\\roger\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.0-rc.2.23480.1\\microsoft.entityframeworkcore.relational.8.0.0-rc.2.23480.1.nupkg.sha512",
     "C:\\Users\\roger\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.0-rc.2.23480.1\\microsoft.entityframeworkcore.sqlserver.8.0.0-rc.2.23480.1.nupkg.sha512",
     "C:\\Users\\roger\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

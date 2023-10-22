@@ -21,43 +21,75 @@ namespace CheapBuyAPI.Controllers.Tests
                 x.Get(
                     It.IsAny<Expression<Func<Product, bool>>>(),
                     It.IsAny<Func<IQueryable<Product>, IOrderedQueryable<Product>>>(),
-                    It.IsAny<string>()
-                )).Returns(CreateFakeProducts().AsEnumerable());
+                    It.IsAny<string>()))
+                .Returns(CreateFakeProducts().AsEnumerable());
+
+            _productRepositoryMock.Setup(x =>
+                x.GetById(It.IsAny<object>()))
+                .Returns(CreateFakeProducts()[0]);
+
+            _productRepositoryMock.Setup(x =>
+                x.GetById("TestNew"))
+                .Returns(value: null);
         }
 
         [TestMethod()]
-        public void AddProductTest()
+        public void AddNewProductTest()
         {
             // Given
             ProductRequest response = new()
             {
-                ProductId = "TestId",
-                ProductName = "Test",
+                ProductId = "TestNew",
+                ProductName = "TestNew",
+                Price = 2,
+                BrandId = 2
+            };
+            ProductController productController = new(_productRepositoryMock.Object);
+
+            // When
+            productController.PostProduct(response);
+
+            // Then
+            _productRepositoryMock.Verify(x => x.SaveChanges(), Times.Once());
+        }
+
+        [TestMethod()]
+        public void AddExistingProductTest()
+        {
+            // Given
+            ProductRequest response = new()
+            {
+                ProductId = "TestExisting",
+                ProductName = "TestExisting",
                 Price = 1,
                 BrandId = 1
             };
+            string exceptionMessage = "";
+            ProductController productController = new(_productRepositoryMock.Object);
 
             // When
-            int expectedProducts;
-
-            ProductController productController = new(_productRepositoryMock.Object);
-            productController.PostProduct(response);
-
-            expectedProducts = productController.GetAll().Count;
-
+            try
+            {
+                productController.PostProduct(response);
+            }
+            catch (Exception ex)
+            {
+                exceptionMessage = ex.Message;
+            }
+            
             // Then
-            Assert.IsTrue(expectedProducts > 0);
+            _productRepositoryMock.Verify(x => x.SaveChanges(), Times.Never());
+            Assert.AreEqual("Product already exist", exceptionMessage);
         }
 
         [TestMethod()]
         public void GetAllProductsTest()
         {
             // Given
-
-            // When
-            int expectedProducts;
             ProductController controller = new(_productRepositoryMock.Object);
-            expectedProducts = controller.GetAll().Count;
+            
+            // When
+            int expectedProducts = controller.GetAll().Count;
 
             // Then
             Assert.IsTrue(expectedProducts > 0);
@@ -68,14 +100,12 @@ namespace CheapBuyAPI.Controllers.Tests
         {
             // Given
             ProductController controller = new(_productRepositoryMock.Object);
-            int totalProductsBefore = controller.GetAll().Count;
 
             // When
             controller.DeleteProduct("1");
-            int totalProductsAfter = controller.GetAll().Count;
 
             // Then
-            Assert.IsTrue(totalProductsBefore > totalProductsAfter);
+            _productRepositoryMock.Verify(x => x.SaveChanges(), Times.Once());
         }
 
         private List<Product> CreateFakeProducts()

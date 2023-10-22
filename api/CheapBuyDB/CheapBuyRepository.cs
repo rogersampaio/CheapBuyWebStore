@@ -4,11 +4,11 @@ using System.Linq.Expressions;
 
 namespace CheapBuyDB
 {
-
     public class CheapBuyRepository<T>(CheapBuyDbContext context): ICheapBuyRepository<T> where T : class
     {
         internal CheapBuyDbContext context = context;
         internal DbSet<T> dbSet = context.Set<T>();
+        private static readonly char[] separator = [','];
 
         public virtual IEnumerable<T> Get(
             Expression<Func<T, bool>>? filter = null,
@@ -23,7 +23,7 @@ namespace CheapBuyDB
             }
 
             foreach (var includeProperty in includeProperties.Split
-                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                (separator, StringSplitOptions.RemoveEmptyEntries))
             {
                 query = query.Include(includeProperty);
             }

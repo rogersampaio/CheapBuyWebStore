@@ -1,0 +1,13 @@
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+api/CheapBuyAPI/bin/*
+api/CheapBuyAPI/obj/*
+api/CheapBuyAPI/.vs/*
+
+api/CheapBuyAPITests/bin/*
+api/CheapBuyAPITests/obj/*
+
+api/CheapBuyDB/bin/*
+api/CheapBuyDB/obj/*

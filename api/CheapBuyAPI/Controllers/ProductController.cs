@@ -29,14 +29,15 @@ public class ProductController(ICheapBuyRepository<Product> productRepository) :
     public ProductResponse? GetProductById(string id)
     {
         var result = from product in productRepository.Get(includeProperties: "Brand")
+                     where product.Id == id
                      select new ProductResponse
                      {
                          ProductId = product.Id,
                          ProductName = product.Name,
                          Price = product.Price,
-                         Brand = product?.Brand?.Name
+                         BrandId = product.BrandId
                      };
-        return result.SingleOrDefault();
+        return result.FirstOrDefault();
     }
 
     [HttpPost(Name = "PostProduct")]

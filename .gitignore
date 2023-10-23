@@ -5,7 +5,16 @@
 /api/CheapBuyAPI/bin/*
 /api/CheapBuyAPI/obj/*
 /api/CheapBuyAPI/.vs/*
+api/CheapBuyAPI/bin/*
+api/CheapBuyAPI/obj/*
+api/CheapBuyAPI/.vs/*
 api/CheapBuyAPI/bin/Debug/net8.0/*.*
 api/CheapBuyAPI/.vs/CheapBuyAPI/v17/.suo
 api/CheapBuyAPI/.vs/ProjectEvaluation/cheapbuyapi.metadata.v7.bin
 api/CheapBuyAPI/.vs/ProjectEvaluation/cheapbuyapi.projects.v7.bin
+
+api/CheapBuyAPITests/bin/*
+api/CheapBuyAPITests/obj/*
+
+api/CheapBuyDB/bin/*
+api/CheapBuyDB/obj/*

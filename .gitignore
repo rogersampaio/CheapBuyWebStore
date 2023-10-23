@@ -5,3 +5,4 @@
 /api/CheapBuyAPI/bin/*
 /api/CheapBuyAPI/obj/*
 /api/CheapBuyAPI/.vs/*
+api/CheapBuyAPI/bin/Debug/net8.0/*.*

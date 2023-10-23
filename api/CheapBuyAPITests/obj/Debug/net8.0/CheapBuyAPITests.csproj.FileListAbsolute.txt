@@ -163,12 +163,6 @@ C:\Projects\roger-argolo\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.
 C:\Projects\roger-argolo\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.genruntimeconfig.cache
 C:\Projects\roger-argolo\api\CheapBuyAPITests\obj\Debug\net8.0\ref\CheapBuyAPITests.dll
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\CoverletSourceRootsMapping_CheapBuyAPITests
-C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.csproj.AssemblyReference.cache
-C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.AssemblyInfoInputs.cache
-C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.AssemblyInfo.cs
-C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.csproj.CoreCompileInputs.cache
-C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.sourcelink.json
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\testhost.dll
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\CheapBuyAPI.deps.json
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\CheapBuyAPI.runtimeconfig.json
@@ -322,6 +316,12 @@ C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\Microsoft.Vis
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\CheapBuyAPI.pdb
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\CheapBuyDB.pdb
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.csproj.AssemblyReference.cache
+C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.AssemblyInfoInputs.cache
+C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.AssemblyInfo.cs
+C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.csproj.CoreCompileInputs.cache
+C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.sourcelink.json
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.csproj.CopyComplete
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\CheapBuyAPITests.dll
 C:\Projects\CheapBuyWebStore\api\CheapBuyAPITests\obj\Debug\net8.0\refint\CheapBuyAPITests.dll

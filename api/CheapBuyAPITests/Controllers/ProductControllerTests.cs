@@ -1,81 +1,95 @@
-﻿using CheapBuyAPI.DTOs;
-using CheapBuyAPI.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using CheapBuyAPI.Response;
+using CheapBuyDB.Interfaces;
+using CheapBuyDB.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using System.Linq.Expressions;
 
 namespace CheapBuyAPI.Controllers.Tests
 {
     [TestClass()]
     public class ProductControllerTests
     {
-        public required DbContextOptions<CheapBuyDbContext> _options;
+        public required Mock<ICheapBuyRepository<Product>> _productRepositoryMock;
 
         [TestInitialize()]
         public void Initialize()
         {
-            //TODO: Implement Repository Pattern to avoid using InMemoryDatabase Tests
-            //https://learn.microsoft.com/en-us/ef/core/testing/choosing-a-testing-strategy
-            _options = new DbContextOptionsBuilder<CheapBuyDbContext>()
-                .UseInMemoryDatabase(databaseName: "CheapBuy")
-                .Options;
-            
-            AddInMemoryProducts();
+            _productRepositoryMock = new Mock<ICheapBuyRepository<Product>>();
+
+            _productRepositoryMock.Setup(x =>
+                x.Get(
+                    It.IsAny<Expression<Func<Product, bool>>>(),
+                    It.IsAny<Func<IQueryable<Product>, IOrderedQueryable<Product>>>(),
+                    It.IsAny<string>()))
+                .Returns(CreateFakeProducts().AsEnumerable());
+
+            _productRepositoryMock.Setup(x =>
+                x.GetById(It.IsAny<object>()))
+                .Returns(CreateFakeProducts()[0]);
+
+            _productRepositoryMock.Setup(x =>
+                x.GetById("TestNew"))
+                .Returns(value: null);
         }
 
         [TestMethod()]
-        public void AddProductTest()
+        public void AddNewProductTest()
         {
             // Given
-            ProductDto newProduct = new()
+            ProductRequest response = new()
             {
-                ProductId = "TestId",
-                ProductName = "Test",
+                ProductId = "TestNew",
+                ProductName = "TestNew",
+                Price = 2,
+                BrandId = 2
+            };
+            ProductController productController = new(_productRepositoryMock.Object);
+
+            // When
+            productController.PostProduct(response);
+
+            // Then
+            _productRepositoryMock.Verify(x => x.SaveChanges(), Times.Once());
+        }
+
+        [TestMethod()]
+        public void AddExistingProductTest()
+        {
+            // Given
+            ProductRequest response = new()
+            {
+                ProductId = "TestExisting",
+                ProductName = "TestExisting",
                 Price = 1,
                 BrandId = 1
             };
+            string exceptionMessage = "";
+            ProductController productController = new(_productRepositoryMock.Object);
 
             // When
-            int expectedProducts;
-            using (var context = new CheapBuyDbContext(_options))
+            try
             {
-                ProductController productController = new(context);
-                productController.PostProduct(newProduct);
-
-                expectedProducts = productController.GetAll().Count;
+                productController.PostProduct(response);
             }
-
-            // Then
-            Assert.IsTrue(expectedProducts > 0);
-        }
-
-        [TestMethod()]
-        public void GetAllBrandsTest()
-        {
-            // Given
-
-            // When
-            int expectedBrands;
-            using (var context = new CheapBuyDbContext(_options))
+            catch (Exception ex)
             {
-                BrandController brandController = new(context);
-                expectedBrands = brandController.GetAll().Count;
+                exceptionMessage = ex.Message;
             }
+            
             // Then
-            Assert.IsTrue(expectedBrands > 0);
+            _productRepositoryMock.Verify(x => x.SaveChanges(), Times.Never());
+            Assert.AreEqual("Product already exist", exceptionMessage);
         }
 
         [TestMethod()]
         public void GetAllProductsTest()
         {
             // Given
-
+            ProductController controller = new(_productRepositoryMock.Object);
+            
             // When
-            int expectedProducts;
-            using (var context = new CheapBuyDbContext(_options))
-            {
-                ProductController controller = new(context);
-                expectedProducts = controller.GetAll().Count;
-            }
+            int expectedProducts = controller.GetAll().Count;
 
             // Then
             Assert.IsTrue(expectedProducts > 0);
@@ -85,45 +99,36 @@ namespace CheapBuyAPI.Controllers.Tests
         public void DeleteProductTest()
         {
             // Given
-            using var context = new CheapBuyDbContext(_options);
-            ProductController controller = new(context);
-            int totalProductsBefore = controller.GetAll().Count;
+            ProductController controller = new(_productRepositoryMock.Object);
 
             // When
             controller.DeleteProduct("1");
-            int totalProductsAfter = controller.GetAll().Count;
 
             // Then
-            Assert.IsTrue(totalProductsBefore > totalProductsAfter);
+            _productRepositoryMock.Verify(x => x.SaveChanges(), Times.Once());
         }
 
-        private void AddInMemoryProducts()
+        private List<Product> CreateFakeProducts()
         {
-            using var context = new CheapBuyDbContext(_options);
-
-            if (!context.Brands.Any())
-            {
-                Brand brandApple = new() { Id = 1, Name = "Apple" };
-                Brand brandHP = new() { Id = 2, Name = "HP" };
-                Brand brandDell = new() { Id = 3, Name = "Dell" };
-                List<Product> products = new() {
-                    new Product(){
-                        Id = "1",
-                        Name = "Test1",
-                        Price = 1,
-                        BrandId = brandApple.Id,
-                    },
-                    new Product(){
-                        Id = "2",
-                        Name = "Test2",
-                        Price = 1,
-                        BrandId = brandHP.Id
-                    }
-                };
-                context.Brands.AddRange(new List<Brand> { brandApple, brandHP, brandDell });
-                context.Products.AddRange(products);
-                context.SaveChanges();
-            }
+            Brand brandApple = new() { Id = 1, Name = "Apple" };
+            Brand brandHP = new() { Id = 2, Name = "HP" };
+            Brand brandDell = new() { Id = 3, Name = "Dell" };
+            return [
+                new Product()
+                {
+                    Id = "1",
+                    Name = "Test1",
+                    Price = 1,
+                    BrandId = brandApple.Id,
+                },
+                new Product()
+                {
+                    Id = "2",
+                    Name = "Test2",
+                    Price = 1,
+                    BrandId = brandHP.Id
+                }
+            ];
         }
     }
 

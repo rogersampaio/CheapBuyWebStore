@@ -1,7 +1,7 @@
-﻿using CheapBuyAPI.Models;
+﻿using CheapBuyDB.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CheapBuyAPI
+namespace CheapBuyDB.Interfaces
 {
     public interface ICheapBuyDbContext : IDisposable
     {

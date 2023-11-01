@@ -1,6 +1,6 @@
-﻿namespace CheapBuyAPI.DTOs
+﻿namespace CheapBuyAPI.Response
 {
-    public class BrandDto
+    public class BrandResponse
     {
         public required int Id { get; set; }
         public required string Name { get; set; }

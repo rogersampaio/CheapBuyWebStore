@@ -1,89 +1,79 @@
-using CheapBuyAPI.DTOs;
+using CheapBuyAPI.Response;
+using CheapBuyDB.Interfaces;
+using CheapBuyDB.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CheapBuyAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ProductController : ControllerBase
+public class ProductController(ICheapBuyRepository<Product> productRepository) : ControllerBase
 {
-    private readonly ICheapBuyDbContext _context;
-
-    public ProductController(ICheapBuyDbContext context)
-    {
-        _context = context;
-    }
+    //private readonly ICheapBuyRepository<Product> _productRepository = productRepository;
 
     [HttpGet(Name = "GetProducts")]
-    public List<ProductDto> GetAll()
+    public List<ProductResponse> GetAll()
     {
-        var products = from product in _context.Products
-                       join brand in _context.Brands on product.BrandId equals brand.Id
-                       select new ProductDto
+        var products = from product in productRepository.Get(includeProperties: "Brand")
+                       select new ProductResponse
                        {
                            ProductId = product.Id,
                            ProductName = product.Name,
                            Price = product.Price,
-                           Brand = brand.Name
+                           Brand = product?.Brand?.Name
                        };
-
         return products.ToList();
     }
 
     [HttpGet("{id}", Name = "Get by Id")]
-    public ProductDto? GetProductById(string id)
+    public ProductResponse? GetProductById(string id)
     {
-        var result = from product in _context.Products
-                     join brand in _context.Brands on product.BrandId equals brand.Id
+        var result = from product in productRepository.Get(includeProperties: "Brand")
                      where product.Id == id
-                     select new ProductDto
+                     select new ProductResponse
                      {
                          ProductId = product.Id,
                          ProductName = product.Name,
                          Price = product.Price,
-                         BrandId = brand.Id,
-                         Brand = brand.Name
+                         BrandId = product.BrandId
                      };
-
-        return result.SingleOrDefault();
+        return result.FirstOrDefault();
     }
 
     [HttpPost(Name = "PostProduct")]
-    public void PostProduct(ProductDto product)
+    public void PostProduct(ProductRequest product)
     {
-        var products = from p in _context.Products
-                       where p.Id == product.ProductId
-                       select p;
-        if (products?.Count() > 0)
+        var existingProduct = productRepository.GetById(product.ProductId);
+        if (existingProduct != null)
         {
             throw new Exception("Product already exist");
         }
         else
         {
-            _context.Products.Add(new Models.Product() {
+            productRepository.Add(new Product()
+            {
                 Id = product.ProductId,
-                Name = product.ProductName, 
+                Name = product.ProductName,
                 Price = product.Price,
                 BrandId = product.BrandId
             });
-            _context.SaveChanges();
+            productRepository.SaveChanges();
         }
     }
 
 
     [HttpPut(Name = "PutProduct")]
-    public void PutProduct(ProductDto product)
+    public void PutProduct(ProductRequest product)
     {
-        var result = (from p in _context.Products
-                       where p.Id == product.ProductId
-                       select p).SingleOrDefault();
-        if (result != null)
+        var existingProduct = productRepository.GetById(product.ProductId);
+        if (existingProduct != null)
         {
-            result.Name = product.ProductName;
-            result.Price = product.Price;
-            result.BrandId = product.BrandId;
+            existingProduct.Name = product.ProductName;
+            existingProduct.Price = product.Price;
+            existingProduct.BrandId = product.BrandId;
 
-            _context.SaveChanges();
+            productRepository.Update(existingProduct);
+            productRepository.SaveChanges();
         }
         else
         {
@@ -94,17 +84,15 @@ public class ProductController : ControllerBase
     [HttpDelete(Name = "DeleteProduct")]
     public void DeleteProduct(string productId)
     {
-        var productDb = (from p in _context.Products
-                        where p.Id == productId
-                        select p).SingleOrDefault();
-        if (productDb == null)
+        var existingProduct = productRepository.GetById(productId);
+        if (existingProduct == null)
         {
             throw new Exception("Product does not exist");
         }
         else
         {
-            _context.Products.Remove(productDb);
-            _context.SaveChanges();
+            productRepository.Delete(existingProduct);
+            productRepository.SaveChanges();
         }
     }
 }

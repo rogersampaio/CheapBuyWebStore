@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheapBuyAPI", "CheapBuyAPI.csproj", "{BFF69B77-FAD9-4F31-A111-4EBF521BF7A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheapBuyAPITests", "..\CheapBuyAPITests\CheapBuyAPITests.csproj", "{FE609584-7D55-4592-A729-3429AB8F1EAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheapBuyAPITests", "..\CheapBuyAPITests\CheapBuyAPITests.csproj", "{FE609584-7D55-4592-A729-3429AB8F1EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheapBuyDB", "..\CheapBuyDB\CheapBuyDB.csproj", "{BC1F4EC9-A74C-4653-8271-A4104B7C952A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FE609584-7D55-4592-A729-3429AB8F1EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE609584-7D55-4592-A729-3429AB8F1EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE609584-7D55-4592-A729-3429AB8F1EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC1F4EC9-A74C-4653-8271-A4104B7C952A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC1F4EC9-A74C-4653-8271-A4104B7C952A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC1F4EC9-A74C-4653-8271-A4104B7C952A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC1F4EC9-A74C-4653-8271-A4104B7C952A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

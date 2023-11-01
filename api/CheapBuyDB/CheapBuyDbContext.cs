@@ -1,15 +1,13 @@
-﻿using CheapBuyAPI.Models;
+﻿using CheapBuyDB.Interfaces;
+using CheapBuyDB.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CheapBuyAPI
+namespace CheapBuyDB
 {
-    public class CheapBuyDbContext : DbContext, ICheapBuyDbContext
+    public class CheapBuyDbContext(DbContextOptions<CheapBuyDbContext> options) : DbContext(options), ICheapBuyDbContext
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Brand> Brands { get; set; }
-
-        public CheapBuyDbContext(DbContextOptions<CheapBuyDbContext> options) : base(options) { 
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,18 +21,15 @@ namespace CheapBuyAPI
         private static void SeedData(ModelBuilder modelBuilder)
         {
             Brand[] brands = {
-                new Brand
-                {
+                new() {
                     Id = 1,
                     Name = "Apple"
                 },
-                new Brand
-                {
+                new() {
                     Id = 2,
                     Name = "HP"
                 },
-                new Brand
-                {
+                new() {
                     Id = 3,
                     Name = "Dell"
                 }

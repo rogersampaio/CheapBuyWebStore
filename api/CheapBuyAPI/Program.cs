@@ -1,10 +1,10 @@
-using CheapBuyAPI;
+using CheapBuyDB;
+using CheapBuyDB.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -15,6 +15,7 @@ builder.Services.AddDbContext<CheapBuyDbContext>(
 
 
 builder.Services.AddScoped<ICheapBuyDbContext, CheapBuyDbContext>();
+builder.Services.AddScoped(typeof(ICheapBuyRepository<>), typeof(CheapBuyRepository<>));
 
 var app = builder.Build();
 

@@ -4,7 +4,8 @@
  The main page displays a list of Products. We are able to edit, delete and add new products.
  ![image](https://github.com/rogersampaio/CheapBuyWebStore/assets/21226627/2c1cd5ab-35ce-4ecb-8a7f-f46a30379190)
 
-On the add/edit pages we can type the id, name, price (integer only) and select an existing brand (which was manually added to the database.
+On the add/edit pages we can type the id, name, price (integer only) and select an existing brand (which was manually added to the database).
+
 ![image](https://github.com/rogersampaio/CheapBuyWebStore/assets/21226627/581292ec-de9b-456e-9615-99c953512c80)
 
 On the API side, we have 6 endpoints, 1 to get all the brands and 5 to manipulate the Product.

@@ -12,7 +12,9 @@ On the API side, we have 6 endpoints, 1 to get all the brands and 5 to manipulat
 ![image](https://github.com/rogersampaio/CheapBuyWebStore/assets/21226627/e52d5236-5374-4b14-b829-8ebce8e0f1ca)
 
 The database was created using .Net Migrations commands. The back-end was developed using code-first approach. There's also MS Unit Tests covering the API. Repository Pattern was added to remove the direct connection of the Database layer (EntityFramework) with the controller. It's also better to test as we can mock the repository. Unit of Work Pattern was not added as we don't have concurrency issues on this small example.
+
 ![image](https://github.com/rogersampaio/CheapBuyWebStore/assets/21226627/8ac00762-0f25-438b-a192-bd9184950255)
+
 
 
 I'll try to keep it up-to-date with latest Next.js and .Net versions.

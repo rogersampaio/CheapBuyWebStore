@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
+import getConfig from 'next/config'
+
+const { serverRuntimeConfig } = getConfig()
 
 export async function GET() {
-  //TODO: Enable CORS or run NextJS to use Local HTTPS: 'https://localhost:7147/Product'
-  const res = await fetch('http://localhost:5078/Brand', {
+  const res = await fetch(`${serverRuntimeConfig.cheapBuyApiURL}/Brand`, {
     headers: {
         'Content-Type': 'application/json',
     }

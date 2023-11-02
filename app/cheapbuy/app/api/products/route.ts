@@ -1,8 +1,10 @@
 import {  NextResponse } from "next/server";
+import getConfig from 'next/config'
+
+const { serverRuntimeConfig } = getConfig()
 
 export async function GET() {
-  //TODO: Enable CORS or run NextJS to use Local HTTPS: 'https://localhost:7147/Product'
-  const res = await fetch('http://localhost:5078/Product', {
+  const res = await fetch(`${serverRuntimeConfig.cheapBuyApiURL}/Product`, {
     headers: {
         'Content-Type': 'application/json',
     }
@@ -19,7 +21,7 @@ export async function POST(request: Request) {
   const brandId = formData.get('brandId')
   const price = formData.get('price')
 
-  const res = await fetch('http://localhost:5078/Product', {
+  const res = await fetch(`${serverRuntimeConfig.cheapBuyApiURL}/Product`, {
     body: JSON.stringify({ productId, productName, brandId, price }),
     headers: {
       'Content-Type': 'application/json',
@@ -43,7 +45,7 @@ export async function PUT(request: Request) {
   const brandId = formData.get('brandId')
   const price = formData.get('price')
 
-  const res = await fetch('http://localhost:5078/Product', {
+  const res = await fetch(`${serverRuntimeConfig.cheapBuyApiURL}/Product`, {
     body: JSON.stringify({ productId, productName, brandId, price }),
     headers: {
       'Content-Type': 'application/json',
@@ -58,7 +60,7 @@ export async function PUT(request: Request) {
 
 export async function DELETE(request: Request) {
   const productId = await request.json()
-  const res = await fetch(`http://localhost:5078/Product?productId=${productId}`, {
+  const res = await fetch(`${serverRuntimeConfig.cheapBuyApiURL}/Product?productId=${productId}`, {
     method: "DELETE"
   })
   return res

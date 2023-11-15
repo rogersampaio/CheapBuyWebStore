@@ -1,7 +1,7 @@
 # CheapBuyWebStore
  This is a full webpage CRUD (Create/Read/Update/Delete) project containing a Next.js 14 React App, a .NET 8 API and SQL Server as relational database.
  
- The main page displays a list of Products. We are able to edit, delete and add new products.
+ The main page displays a list of Products. We are able to search, edit, delete and add new products.
  ![image](https://github.com/rogersampaio/CheapBuyWebStore/assets/21226627/2c1cd5ab-35ce-4ecb-8a7f-f46a30379190)
 
 On the add/edit pages we can type the id, name, price (integer only) and select an existing brand (which was manually added to the database).
